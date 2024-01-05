@@ -1,0 +1,15 @@
+api_key = AIzaSyDwOmNXc0vkt9qkXndy_qZTqI1a-TFprgI
+alt_api_key = AIzaSyCFlVyLO8lxfZDjtZw8Cyqgcv_RuQmYR48
+
+BASE URL: https://www.googleapis.com/youtube/v3
+
+SEARCH 
+    BY VIDEO: https://www.googleapis.com/youtube/v3/search?key=AIzaSyDwOmNXc0vkt9qkXndy_qZTqI1a-TFprgI&q={searchQuery}&maxResults={maxResults}&type=video&part=snippet
+    BY CHANNEL: https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId={channelId}&maxResults={max_results}&order=viewCount&regionCode=es&type=video&key=AIzaSyDwOmNXc0vkt9qkXndy_qZTqI1a-TFprgI
+
+VIDEO : https://www.googleapis.com/youtube/v3/videos?key=AIzaSyDwOmNXc0vkt9qkXndy_qZTqI1a-TFprgI&part=statistics,snippet,contentDetails&id=${videoId}
+
+CHANNELS : https://www.googleapis.com/youtube/v3/channels?key=AIzaSyDwOmNXc0vkt9qkXndy_qZTqI1a-TFprgI&part=snippet,statistics&id=${channelId}
+
+
+REPLIES : https://www.googleapis.com/youtube/v3/comments?parentId={parent-comment-id}&maxResults=3&key=AIzaSyDwOmNXc0vkt9qkXndy_qZTqI1a-TFprgI
