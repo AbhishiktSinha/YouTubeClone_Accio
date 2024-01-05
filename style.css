@@ -102,6 +102,7 @@ nav#navbar-container {
 
     
     >.search-wrapper {        
+        display: flex;
         align-items: stretch !important;
         justify-content: start;
         width: fit-content;

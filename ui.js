@@ -82,8 +82,41 @@ function updateThumbnailClickEvents() {
     mainPageThumbnails.forEach((thumbnailContainer) => {
         thumbnailContainer.addEventListener('click', (event) => {
 
+            console.log('clicked');
             const videoId = thumbnailContainer.getAttribute('data-id');
             localStorage.setItem('targetVideoId', videoId);
+
+            window.location.href = 'video_player.html';
         })
     })
 }
+
+const searchForm = document.getElementById('search-query-form');
+
+searchForm.addEventListener('submit',(event)=> {
+    event.preventDefault();
+
+    const searchQuery = searchForm.search.value;
+    renderSearchResults(searchQuery).then((result)=> {
+        updateThumbnailClickEvents();
+        console.log('rendered new videos');
+    })
+
+    searchForm.reset();
+    
+})
+
+window.addEventListener('load', (event)=> {
+    const data = localStorage.getItem('renderableVideoProperties');
+    
+    if (!data) {
+        renderSearchResults('');
+    }
+    else {
+        const videoObjectsArray = JSON.parse(data);
+        videoObjectsArray.forEach((video)=> {
+            renderHomeVideo(video);
+        })
+        updateThumbnailClickEvents();
+    }
+})
